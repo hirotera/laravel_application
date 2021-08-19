@@ -19,7 +19,7 @@
                     <a class="btn btn-success btn-sm" href="{{ route('post.edit', ['id' => $post->id]) }}">
                         <i class="far fa-edit"></i>編集
                     </a>
-                    <a class="btn btn-danger btn-sm" rel="nofollow" href="#">
+                    <a class="btn btn-danger btn-sm" rel="nofollow" href="{{ route('post.delete', ['id' => $post->id]) }}">
                         <i class="far fa-trash-alt"></i>削除
                     </a>
                     @endif

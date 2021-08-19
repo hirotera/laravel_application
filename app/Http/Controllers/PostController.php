@@ -85,4 +85,19 @@ class PostController extends Controller
 
         return redirect('/');
     }
+
+    public function delete($id)
+    {
+        // 投稿データのIDでモデルから投稿を1件取得
+        $post = Post::findOrFail($id);
+
+        // 投稿者以外の削除を防ぐ
+        if ($post->user_id !== Auth::id()) {
+            return redirect('/');
+        }
+
+        $post->delete(); // DBのレコードを削除
+
+        return redirect('/');
+    }
 }
