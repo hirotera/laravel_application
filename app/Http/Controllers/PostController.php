@@ -22,6 +22,9 @@ class PostController extends Controller
     // 登録（投稿）画面表示
     public function create()
     {
+        $check = "投稿画面だよ！！";
+        dd($check);
+
         // create.blade.phpを表示する(これから作成)
         return view('posts.create');
     }
@@ -63,6 +66,8 @@ class PostController extends Controller
             return redirect('/');
         }
 
+        dd($post);
+        
         // edit.blade.phpを表示する(これから作成)
         return view('posts.edit', ['post' => $post]);
     }
